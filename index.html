@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <title>Фрут Корект – Разносна търговия на плодове, зеленчуци и ядки</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Фрут Корект – разносна търговия на свежи плодове, зеленчуци и ядки до магазини, заведения и офиси. Бърза доставка и отлично качество.">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: url('https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+            color: white;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .header-content {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #219150;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #27ae60;
+        }
+
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .two-columns > div {
+            flex: 1 1 250px;
+        }
+
+        .service-boxes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-box {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            flex: 1 1 220px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        /* Контактна форма */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .contact-info {
+            flex: 1 1 260px;
+        }
+
+        .contact-form {
+            flex: 1 1 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        footer {
+            background: #222;
+            color: #ddd;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <nav>
+            <div class="logo">Фрут Корект</div>
+            <div>
+                <a href="#about">За нас</a>
+                <a href="#products">Продукти</a>
+                <a href="#services">Услуги</a>
+                <a href="#contact">Контакти</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <h1>Фрут Корект – разносна търговия на плодове, зеленчуци и ядки</h1>
+            <p>Доставяме свежи плодове, зеленчуци и ядки директно до магазини, ресторанти, заведения и офиси. 
+               Качество, коректност и навременни доставки – всеки ден.</p>
+            <a href="#contact" class="btn btn-primary">Изпратете запитване</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- За нас -->
+    <section id="about">
+        <h2>За нас</h2>
+        <div class="two-columns">
+            <div>
+                <p>
+                    „Фрут Корект“ е фирма, специализирана в разносната търговия на плодове, зеленчуци и ядки.
+                    Работим директно с производители и утвърдени доставчици, за да гарантираме постоянно качество и
+                    конкурентни цени за нашите клиенти.
+                </p>
+                <p>
+                    Обслужваме магазини, ресторанти, хотели, кетъринг компании, столове и офиси, като предлагаме
+                    гъвкави условия за доставка, съобразени с вашия график и потребности.
+                </p>
+            </div>
+            <div>
+                <ul>
+                    <li>Ежедневни доставки на свежи продукти</li>
+                    <li>Конкурентни цени и индивидуални оферти</li>
+                    <li>Коректно отношение и бърза комуникация</li>
+                    <li>Възможност за редовни графици за зареждане</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Продукти -->
+    <section id="products">
+        <h2>Нашите продукти</h2>
+        <div class="service-boxes">
+            <div class="service-box">
+                <h3>Плодове</h3>
+                <p>Широка гама сезонни и целогодишни плодове:</p>
+                <ul>
+                    <li>Ябълки, круши, цитруси</li>
+                    <li>Банани, грозде, киви</li>
+                    <li>Праскови, нектарини, кайсии (сезонно)</li>
+                    <li>Горски плодове по заявка</li>
+                </ul>
+            </div>
+            <div class="service-box">
+                <h3>Зеленчуци</h3>
+                <p>Свежи зеленчуци за търговски обекти и професионални кухни:</p>
+                <ul>
+                    <li>Домати, краставици, чушки</li>
+                    <li>Картофи, лук, моркови</li>
+                    <li>Зелени салати, зеле, спанак</li>
+                    <li>Специални артикули по заявка</li>
+                </ul>
+            </div>
+            <div class="service-box">
+                <h3>Ядки и сушени плодове</h3>
+                <p>Подходящи за магазини за здравословни храни, барове и кафенета:</p>
+                <ul>
+                    <li>Бадеми, орехи, лешници</li>
+                    <li>Фъстъци, кашу, миксове</li>
+                    <li>Сушени кайсии, сливи, стафиди</li>
+                    <li>Други ядки и миксове по заявка</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services">
+        <h2>Какво предлагаме</h2>
+        <div class="two-columns">
+            <div>
+                <ul>
+                    <li>Разносна търговия и доставка до обект</li>
+                    <li>Индивидуални оферти спрямо обем и честота на поръчките</li>
+                    <li>Възможност за ежедневни, седмични или по график доставки</li>
+                    <li>Бърза реакция при спешни заявки</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>Консултация при избор на асортимент</li>
+                    <li>Доставки до магазини, заведения, офиси и хотели</li>
+                    <li>Гъвкави условия за плащане след договорка</li>
+                    <li>Издаване на всички необходими документи</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контакти -->
+    <section id="contact">
+        <h2>Контакти</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p>За оферти, въпроси или заявки се свържете с нас:</p>
+                <p><strong>Фирма:</strong> Фрут Корект</p>
+                <p><strong>Телефон:</strong> 0888 123 456</p>
+                <p><strong>E-mail:</strong> office@fruitcorrect.bg</p>
+                <p><strong>Адрес склад:</strong> гр. София, бул. Примерен 10</p>
+                <p><strong>Работно време:</strong> Понеделник – Събота, 07:00 – 18:00</p>
+                <p>Подготвяме индивидуална ценова оферта според вашите нужди и обем на поръчките.</p>
+            </div>
+
+            <div class="contact-form">
+                <form action="mailto:office@fruitcorrect.bg" method="post" enctype="text/plain">
+                    <label for="name">Име / Фирма *</label>
+                    <input type="text" id="name" name="Име" required>
+
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="Телефон" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="Email">
+
+                    <label for="subject">Тема</label>
+                    <input type="text" id="subject" name="Тема" placeholder="Запитване за доставка, оферта и др.">
+
+                    <label for="message">Съобщение *</label>
+                    <textarea id="message" name="Съобщение" required placeholder="Опишете какви продукти ви интересуват, ориентировъчни количества и град на доставка."></textarea>
+
+                    <button type="submit" class="btn btn-primary">Изпрати</button>
+                </form>
+                <p style="font-size: 12px; margin-top: 8px;">
+                    Забележка: Настоящата форма използва mailto:. 
+                    За по-сигурна и надеждна форма е препоръчително да се настрои изпращане чрез сървър (PHP, Node.js и др.).
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div>© <span id="year"></span> Фрут Корект. Всички права запазени.</div>
+        <div>Тел: 0888 123 456 | E-mail: office@fruitcorrect.bg</div>
+    </div>
+</footer>
+
+<script>
+    // Автоматично актуализиране на годината
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
