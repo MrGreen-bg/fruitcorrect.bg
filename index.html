@@ -238,7 +238,7 @@ section {
     <div class="header-content">
         <nav>
             <div class="logo">
-    <img src="https://i.imgur.com/O8l45eW.jpeg" alt="Фрут Корект лого" style="height: 50px; width: auto;">
+    <img src="https://i.imgur.com/O8l45eW.jpeg" alt="Фрут Корект лого" style="height: 70px; width: auto;">
 </div>
 
             <div>
@@ -365,30 +365,30 @@ section {
                 <p>Подготвяме индивидуална ценова оферта според вашите нужди и обем на поръчките.</p>
             </div>
 
-            <div class="contact-form">
-                <form action="mailto:office@fruitcorrect.bg" method="post" enctype="text/plain">
-                    <label for="name">Име / Фирма *</label>
-                    <input type="text" id="name" name="Име" required>
+   <div class="contact-form">
+    <form>
+        <label for="name">Име / Фирма *</label>
+        <input type="text" id="name" name="Име" required minlength="3" placeholder="Въведете вашето име или фирма">
 
-                    <label for="phone">Телефон *</label>
-                    <input type="tel" id="phone" name="Телефон" required>
+        <label for="phone">Телефон *</label>
+        <input type="tel" id="phone" name="Телефон" required placeholder="Примерно: 0888 123 456">
 
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="Email" required>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="Email" placeholder="your.email@example.com">
 
-                    <label for="subject">Тема</label>
-                    <input type="text" id="subject" name="Тема" placeholder="Запитване за доставка, оферта и др.">
+        <label for="subject">Тема</label>
+        <input type="text" id="subject" name="Тема" placeholder="Запитване за доставка, оферта и др.">
 
-                    <label for="message">Съобщение *</label>
-                    <textarea id="message" name="Съобщение" required placeholder="Опишете какви продукти ви интересуват, ориентировъчни количества и град на доставка."></textarea>
+        <label for="message">Съобщение *</label>
+        <textarea id="message" name="Съобщение" required minlength="10" placeholder="Опишете какви продукти ви интересуват, ориентировъчни количества и град на доставка. (минимум 10 символа)"></textarea>
 
-                    <button type="submit" class="btn btn-primary">Изпрати</button>
-                </form>
-                <p style="font-size: 12px; margin-top: 8px;">
-                    Забележка: Настоящата форма използва mailto:. 
-                    За по-сигурна и надеждна форма е препоръчително да се настрои изпращане чрез сървър (PHP, Node.js и др.).
-                </p>
-            </div>
+        <button type="submit" class="btn btn-primary">Изпрати</button>
+    </form>
+    <p style="font-size: 12px; margin-top: 8px;">
+        * Полетата са задължителни
+    </p>
+</div>
+
         </div>
     </section>
 </main>
@@ -403,7 +403,40 @@ section {
 <script>
     // Автоматично актуализиране на годината
     document.getElementById('year').textContent = new Date().getFullYear();
+<script>
+    // Валидация на форма
+    const form = document.querySelector('.contact-form form');
+    
+    form.addEventListener('submit', function(event) {
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Проверка на име
+        if (name.length < 3) {
+            alert('Име трябва да е поне 3 символа!');
+            event.preventDefault();
+            return;
+        }
+        
+        // Проверка на телефон (минимум 10 цифри)
+        if (phone.replace(/\D/g, '').length < 10) {
+            alert('Телефонът трябва да е валиден (минимум 10 цифри)!');
+            event.preventDefault();
+            return;
+        }
+        
+        // Проверка на съобщение
+        if (message.length < 10) {
+            alert('Съобщението трябва да е поне 10 символа!');
+            event.preventDefault();
+            return;
+        }
+        
+        alert('Благодарим! Вашето запитване е изпратено.');
+    });
 </script>
+    
 
 </body>
 </html>
